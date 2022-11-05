@@ -16,3 +16,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/template
+template.zip
+*.DS_Store
