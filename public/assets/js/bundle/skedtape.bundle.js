@@ -58,12 +58,12 @@ var SkedTape = function(opts) {
 SkedTape.defaultFormatters = {
 	/**
 	 * Formats the date.
-	 * 
+	 *
 	 * Note, since the component itself invokes the function with a single
 	 * argument, when overriding the function you should provide only the first
 	 * one. The sole purpose of the rest of them is to be used from the derived
-	 * function for convenience. 
-	 * 
+	 * function for convenience.
+	 *
 	 * @param {Date} date The date to format.
 	 * @param {'m'|'l'} endian Date format endianess ('m' - US, 'l' - EU).
 	 *                         Default value is 'm'.
@@ -264,7 +264,7 @@ SkedTape.prototype = {
 			active: entry.active || false,
 			userData: $.extend({}, entry.userData || {})
 		};
-		
+
 		if (opts && opts.preserveId && entry.id) {
 			if (this.getEvent(entry.id)) {
 				throw new Error('Cannot preserve id: already exists');
@@ -1387,7 +1387,7 @@ $.fn.skedTape.defaults = {
 	 * The default implementation always returns *true*.
 	 * You should avoid mutating the arguments in this hook (that may cause
 	 * unexpected behaviour).
-	 * 
+	 *
 	 * @see beforeAddIntoLocation()
 	 */
 	canAddIntoLocation: function(location, event) { return true; },
@@ -1395,7 +1395,7 @@ $.fn.skedTape.defaults = {
 	 * Invoked after getting a positive result from the `canAddIntoLocation()`
 	 * hook just before updating the event. Here you can place any logic that
 	 * mutates the event object given.
-	 * 
+	 *
 	 * @see canAddIntoLocation()
 	 */
 	beforeAddIntoLocation: function(location, event) {},
