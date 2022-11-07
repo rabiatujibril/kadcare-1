@@ -2,25 +2,7 @@
     <div class="container-fluid">
 
         <div class="title-text d-flex align-items-center mb-4 mt-1">
-            <h4 class="sidebar-title mb-0 flex-grow-1"><span class="sm-txt">I</span><span>nventory</span></h4>
-            <div class="dropdown morphing scale-left">
-                <a class="dropdown-toggle more-icon" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-ellipsis-h"></i></a>
-                <ul class="dropdown-menu shadow border-0 p-2 mt-2" data-bs-popper="none">
-                    <li class="fw-bold px-2">Quick Actions</li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="../landing/index.html" aria-current="page">Landing page</a></li>
-                    <li><a class="dropdown-item" href="../inventory/index.html">Inventory</a></li>
-                    <li><a class="dropdown-item" href="../ecommerce/index.html">eCommerce</a></li>
-                    <li><a class="dropdown-item" href="../hrms/index.html">HRMS</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="../account-invoices.html">Invoices List</a></li>
-                    <li><a class="dropdown-item" href="../account-create-invoices.html">Create Invoices</a></li>
-                </ul>
-            </div>
+            <h4 class="sidebar-title mb-0 flex-grow-1"><span class="sm-txt">K</span><span>ADCARE</span></h4>
         </div>
 
         <div class="create-new py-3 mb-2">
