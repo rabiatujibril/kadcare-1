@@ -12,11 +12,11 @@ use Illuminate\Database\Eloquent\Model;
 @property varchar $strength strength
 @property timestamp $created_at created at
 @property timestamp $updated_at updated at
-   
+
  */
-class Drug extends Model 
+class Drug extends Model
 {
-    
+
     /**
     * Database table name
     */
@@ -40,5 +40,12 @@ class Drug extends Model
 
 
 
+    public function category(){
+        return $this->belongsTo(DrugCategory::class);
+    }
+
+    public function type(){
+        return $this->belongsTo(DrugType::class);
+    }
 
 }

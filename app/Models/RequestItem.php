@@ -12,9 +12,9 @@ use Illuminate\Database\Eloquent\Model;
 @property enum $status status
 @property timestamp $created_at created at
 @property timestamp $updated_at updated at
-   
+
  */
-class RequestItem extends Model 
+class RequestItem extends Model
 {
     const STATUS_PENDING='Pending';
 
@@ -48,6 +48,9 @@ const STATUS_DELIVERED='Delivered';
     protected $dates=[];
 
 
+    public function drug(){
+        return $this->belongsTo(Drug::class)->with('category', 'type');
+    }
 
 
 }

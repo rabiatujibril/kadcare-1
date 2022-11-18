@@ -83,5 +83,34 @@ const GENDER_FEMALE='Female';
         'email_verified_at' => 'datetime',
     ];
 
+    public function picture(){
+        return asset('assets/img/profile_av.png');
+    }
+
+    public function fullname(){
+        return $this->lastname . ' '. $this->firstname. ' '. $this->othernames;
+    }
+
+    public function facility(){
+        $facility = Facility::join('user_facilities', 'user_facilities.facility_id', '=', 'facilities.id')
+            ->where('user_facilities.user_id', $this->id)->first();
+        return $facility;
+    }
+
+    public function lga(){
+        $lga = Lga::join('user_lgas', 'user_lgas.lga_id', '=', 'lgas.id')
+            ->where('user_lgas.user_id', $this->id)->first();
+        return $lga;
+    }
+
+    public function loginTask(){
+        $facility = $this->facility();
+        $lga = $this->lga();
+        if($facility)
+            session()->put('facility', $facility);
+        if($lga)
+            session()->put('lga', $lga);
+    }
+
 
 }

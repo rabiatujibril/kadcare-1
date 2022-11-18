@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+@php $user = auth()->user(); @endphp
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -1249,11 +1250,6 @@
                     </ul>
                 </div>
 
-                <div class="mb-4">
-                    <a class="btn lift  btn-outline-secondary" href="../marketing/index.html">Marketing page</a>
-                    <a class="btn lift  btn-outline-secondary" href="../onepgae-uikit/onepage.html">Landing page</a>
-                    <a class="btn lift  btn-outline-secondary" href="../onepgae-uikit/index.html">One page Ui Kit Elements</a>
-                </div>
             </div>
             <div class="px-xl-4 modal-footer d-flex justify-content-start text-center">
                 <button type="button" class="btn flex-fill btn-primary lift">Save Changes</button>

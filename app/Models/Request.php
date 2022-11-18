@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 @property bigint $user_id user id
 @property timestamp $created_at created at
 @property timestamp $updated_at updated at
-   
+
  */
-class Request extends Model 
+class Request extends Model
 {
     const STATUS_PENDING='Pending';
 
@@ -43,5 +43,16 @@ const STATUS_APPROVED='Approved';
 
 
 
+    public function items(){
+        return $this->hasMany(RequestItem::class, 'request_id');
+    }
+
+    public function facility(){
+        return $this->belongsTo(Facility::class, 'facility_id')->with('ward');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
 }

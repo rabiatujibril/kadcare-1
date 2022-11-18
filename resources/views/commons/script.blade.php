@@ -3,8 +3,13 @@
 <script src="{{ asset('assets/js/bundle/dataTables.bundle.js') }}"></script>
 <script src="{{ asset('assets/js/bundle/apexcharts.bundle.js') }}"></script>
 <script src="{{ asset('commons/js/app.js') }}"></script>
+<script src="{{ asset('assets/js/bundle/dataTables.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/bundle/invoice.bundle.js') }}"></script>
 @stack('script')
 <script>
+    $('.datatable').addClass('nowrap').dataTable({
+        responsive: true,
+    });
     $('#myDataTable_no_filter').addClass('nowrap').dataTable({
         responsive: true,
         searching: false,

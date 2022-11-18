@@ -3,17 +3,17 @@
         <div class="row g-3 mb-3 align-items-center">
             <div class="col">
                 <ol class="breadcrumb bg-transparent mb-0">
-                    <li class="breadcrumb-item"><a class="text-secondary" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-secondary" href="#">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                 </ol>
             </div>
         </div>
         <div class="row align-items-center">
             <div class="col">
-                <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, Sunusi!</h1>
-                <small class="text-muted">You have 12 new messages and 7 new notifications.</small>
+                <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, {{ $user->firstname }}!</h1>
+{{--                <small class="text-muted">You have 12 new messages and 7 new notifications.</small>--}}
             </div>
-            <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-7 col-sm-12 mt-2 mt-md-0">
+            {{--<div class="col-xxl-4 col-xl-5 col-lg-6 col-md-7 col-sm-12 mt-2 mt-md-0">
 
                 <div class="input-group">
                     <input class="form-control" type="text" name="daterange">
@@ -35,7 +35,7 @@
                         });
                     })
                 </script>
-            </div>
+            </div>--}}
         </div>
     </div>
 </div>

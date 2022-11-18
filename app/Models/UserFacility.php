@@ -3,27 +3,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 /**
-   @property bigint $lga_id lga id
-@property varchar $name name
-@property bit $status status
+   @property bigint $user_id user id
+@property bigint $facility_id facility id
 @property timestamp $created_at created at
 @property timestamp $updated_at updated at
 
  */
-class Ward extends Model
+class UserFacility extends Model
 {
 
     /**
     * Database table name
     */
-    protected $table = 'wards';
+    protected $table = 'user_facilities';
 
     /**
     * Mass assignable columns
     */
-    protected $fillable=['lga_id',
-'name',
-'status'];
+    protected $fillable=['user_id',
+'facility_id'];
 
     /**
     * Date time columns.
@@ -32,9 +30,8 @@ class Ward extends Model
 
 
 
-    public function lga(){
-        return $this->belongsTo(Lga::class);
+    public function facility(){
+        return Facility::find($this->facility_id);
     }
-
 
 }

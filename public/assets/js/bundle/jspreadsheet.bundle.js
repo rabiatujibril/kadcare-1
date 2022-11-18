@@ -6540,7 +6540,7 @@ if (! jSuites && typeof(require) === 'function') {
             obj.corner = document.createElement('div');
             obj.corner.className = 'jexcel_corner';
             obj.corner.setAttribute('unselectable', 'on');
-            obj.corner.setAttribute('onselectstart', 'return false');
+            // obj.corner.setAttribute('onselectstart', 'return false');
 
             if (obj.options.selectionCopy == false) {
                 obj.corner.style.display = 'none';
@@ -15403,7 +15403,7 @@ if (typeof(document) !== "undefined") {
 
 jSuites.ajax = (function(options, complete) {
     if (Array.isArray(options)) {
-        // Create multiple request controller 
+        // Create multiple request controller
         var multiple = {
             instance: [],
             complete: complete,
@@ -15818,7 +15818,7 @@ jSuites.calendar = (function(el, options) {
             // Restrictions
             validRange: null,
             // Starting weekday - 0 for sunday, 6 for saturday
-            startingDay: null, 
+            startingDay: null,
             // Date format
             format: 'DD/MM/YYYY',
             // Allow keyboard date entry
@@ -15977,14 +15977,14 @@ jSuites.calendar = (function(el, options) {
                             }
                             calendarContainer.style.top = d + 'px';
                         } else {
-                            calendarContainer.style.top = 2 + 'px'; 
+                            calendarContainer.style.top = 2 + 'px';
                         }
 
                         if (window.innerWidth < rect.left + rectContent.width) {
                             var d = window.innerWidth - (rect.left + rectContent.width + 20);
                             calendarContainer.style.left = d + 'px';
                         } else {
-                            calendarContainer.style.left = '0px'; 
+                            calendarContainer.style.left = '0px';
                         }
                     }
                 }
@@ -16264,7 +16264,7 @@ jSuites.calendar = (function(el, options) {
         // Index of days
         var index = 0;
         var d = 0;
- 
+
         // Calendar table
         for (var j = 0; j < 6; j++) {
             // Reset cells container
@@ -16349,7 +16349,7 @@ jSuites.calendar = (function(el, options) {
         var months = obj.options.months;
 
         // Value
-        var value = obj.options.value; 
+        var value = obj.options.value;
 
         // Current date
         var date = new Date();
@@ -16421,7 +16421,7 @@ jSuites.calendar = (function(el, options) {
         updateActions();
     }
 
-    obj.getYears = function() { 
+    obj.getYears = function() {
         // Mode
         obj.options.mode = 'years';
 
@@ -16652,7 +16652,7 @@ jSuites.calendar = (function(el, options) {
         calendarSelectHour = document.createElement('select');
         calendarSelectHour.className = 'jcalendar-select';
         calendarSelectHour.onchange = function() {
-            obj.date[3] = this.value; 
+            obj.date[3] = this.value;
 
             // Event
             if (typeof(obj.options.onupdate) == 'function') {
@@ -16805,7 +16805,7 @@ jSuites.calendar = (function(el, options) {
 
 jSuites.calendar.keydown = function(e) {
     var calendar = null;
-    if (calendar = jSuites.calendar.current) { 
+    if (calendar = jSuites.calendar.current) {
         if (e.which == 13) {
             // ENTER
             calendar.close(false, true);
@@ -17057,7 +17057,7 @@ jSuites.calendar.getDateString = function(value, options) {
         var d = ''+value;
         var splitStr = (d.indexOf('T') !== -1) ? 'T' : ' ';
         d = d.split(splitStr);
- 
+
         var h = 0;
         var m = 0;
         var s = 0;
@@ -18143,7 +18143,7 @@ jSuites.dropdown = (function(el, options) {
         }
     }
 
-    
+
     // Default sort
     var sortData = function(itemA, itemB) {
         var testA, testB;
@@ -18156,7 +18156,7 @@ jSuites.dropdown = (function(el, options) {
                 testA = itemA.name;
             }
         }
-        
+
         if(typeof itemB == "string") {
             testB = itemB;
         } else {
@@ -18166,7 +18166,7 @@ jSuites.dropdown = (function(el, options) {
                 testB = itemB.name;
             }
         }
-        
+
         if (typeof testA == "string" || typeof testB == "string") {
             if (typeof testA != "string") { testA = ""+testA; }
             if (typeof testB != "string") { testB = ""+testB; }
@@ -18735,7 +18735,7 @@ jSuites.dropdown = (function(el, options) {
 
         // Groupd DOM
         if (group) {
-            item.group = group; 
+            item.group = group;
         }
 
         // Id
@@ -18789,7 +18789,7 @@ jSuites.dropdown = (function(el, options) {
 
         var node = document.createElement('div');
         node.className = 'jdropdown-description';
-        node.innerHTML = text || '&nbsp;'; 
+        node.innerHTML = text || '&nbsp;';
 
         // Title
         if (data.title) {
@@ -19026,7 +19026,7 @@ jSuites.dropdown = (function(el, options) {
 
     obj.resetSelected = function() {
         obj.setValue(null);
-    } 
+    }
 
     obj.selectIndex = function(index, force) {
         // Make sure is a number
@@ -19390,7 +19390,7 @@ jSuites.dropdown = (function(el, options) {
     }
 
     /**
-     * Last available item 
+     * Last available item
      */
     obj.last = function() {
         if (obj.options.lazyLoading === true) {
@@ -20993,7 +20993,7 @@ jSuites.editor.youtubeParser = function(url) {
     return (match && match[7].length == 11) ? match[7] : false;
 }
 
-jSuites.editor.getDefaultToolbar = function() { 
+jSuites.editor.getDefaultToolbar = function() {
     return [
         {
             content: 'undo',
@@ -21345,7 +21345,7 @@ jSuites.form = (function(el, options) {
         element.removeAttribute('title');
         // Get elements in the form
         var elements = el.querySelectorAll("input, select, textarea, div[name]");
-        // Run all elements 
+        // Run all elements
         for (var i = 0; i < elements.length; i++) {
             if (elements[i].getAttribute('data-validation')) {
                 if (elements[i].classList.contains('error')) {
@@ -21387,7 +21387,7 @@ jSuites.form = (function(el, options) {
         // Get elements in the form
         var name = null;
         var elements = el.querySelectorAll("input, select, textarea, div[name]");
-        // Run all elements 
+        // Run all elements
         for (var i = 0; i < elements.length; i++) {
             if (name = elements[i].getAttribute('name')) {
                 if (elements[i].type == 'checkbox' || elements[i].type == 'radio') {
@@ -21408,7 +21408,7 @@ jSuites.form = (function(el, options) {
         var test = [];
         // Get elements in the form
         var elements = el.querySelectorAll("input, select, textarea, div[name]");
-        // Run all elements 
+        // Run all elements
         for (var i = 0; i < elements.length; i++) {
             // Required
             if (elements[i].getAttribute('data-validation')) {
@@ -21816,11 +21816,11 @@ jSuites.sha512 = (function(str) {
         var bin = [];
         var mask = (1 << charsize) - 1;
         var len = str.length * charsize;
-    
+
         for (var i = 0; i < len; i += charsize) {
             bin[i >> 5] |= (str.charCodeAt(i / charsize) & mask) << (32 - charsize - (i % 32));
         }
-    
+
         return bin;
     }
 
@@ -22246,7 +22246,7 @@ jSuites.image = jSuites.upload = (function(el, options) {
     });
 
     el.addEventListener('drop', function(e) {
-        e.preventDefault();  
+        e.preventDefault();
         e.stopPropagation();
 
         var html = (e.originalEvent || e).dataTransfer.getData('text/html');
@@ -22410,7 +22410,7 @@ jSuites.loading = (function() {
 })();
 
 jSuites.mask = (function() {
-    // Currency 
+    // Currency
     var tokens = {
         // Currency tokens
         currency: [ '#(.{1})##0?(.{1}0+)?( ?;(.*)?)?', '#' ],
@@ -22433,7 +22433,7 @@ jSuites.mask = (function() {
             var v = parseInt(this.date[3]) + m;
             v /= 24;
         } else if (! (this.date[0] && this.date[1] && this.date[2]) && (this.date[3] || this.date[4])) {
-            v = jSuites.two(this.date[3]) + ':' + jSuites.two(this.date[4]) + ':' + jSuites.two(this.date[5]) 
+            v = jSuites.two(this.date[3]) + ':' + jSuites.two(this.date[4]) + ':' + jSuites.two(this.date[5])
         } else {
             if (this.date[0] && this.date[1] && ! this.date[2]) {
                 this.date[2] = 1;
@@ -22641,7 +22641,7 @@ jSuites.mask = (function() {
             if (adjustNumeric) {
                 var p = null;
                 for (var i = 0; i < n.length; i++) {
-                    if (n[i].match(/[\-0-9]/g) || n[i] == '.' || n[i] == ',') {  
+                    if (n[i].match(/[\-0-9]/g) || n[i] == '.' || n[i] == ',') {
                         p = i;
                     }
                 }
@@ -23674,7 +23674,7 @@ jSuites.mask = (function() {
                         t = value.toFixed(0);
                     }
                 } else if (options.locale && fullMask) {
-                    // Append zeros 
+                    // Append zeros
                     var d = (''+value).split('.');
                     if (options.options) {
                         if (typeof(d[1]) === 'undefined') {
@@ -24087,7 +24087,7 @@ jSuites.notification = (function(options) {
 
     obj.show = function() {
         document.body.appendChild(notification);
-        if (jSuites.getWindowWidth() > 800) { 
+        if (jSuites.getWindowWidth() > 800) {
             jSuites.animation.fadeIn(notification);
         } else {
             jSuites.animation.slideTop(notification, 1);
@@ -24095,7 +24095,7 @@ jSuites.notification = (function(options) {
     }
 
     obj.hide = function() {
-        if (jSuites.getWindowWidth() > 800) { 
+        if (jSuites.getWindowWidth() > 800) {
             jSuites.animation.fadeOut(notification, function() {
                 if (notification.parentNode) {
                     notification.parentNode.removeChild(notification);
@@ -25002,7 +25002,7 @@ jSuites.search = (function(el, options) {
 
         obj(terms);
     }
-    
+
     // Add events
     if (obj.options.input) {
         obj.options.input.addEventListener("keyup", obj.keyup);
@@ -25065,7 +25065,7 @@ jSuites.slider = (function(el, options) {
             // Keep children items
             for (var i = 0; i < el.children.length; i++) {
                 obj.options.items.push(el.children[i]);
-                
+
                 // counter click event
                 var item = document.createElement('div');
                 item.onclick = function() {
@@ -25084,7 +25084,7 @@ jSuites.slider = (function(el, options) {
         var close = document.createElement('div');
         close.className = 'jslider-close';
         close.innerHTML = '';
-        
+
         close.onclick = function() {
             obj.close();
         }
@@ -25190,7 +25190,7 @@ jSuites.slider = (function(el, options) {
             obj.show(obj.currentImage.nextElementSibling);
         }
     }
-    
+
     obj.prev = function() {
         if (obj.currentImage.previousElementSibling) {
             obj.show(obj.currentImage.previousElementSibling);
@@ -26000,7 +26000,7 @@ jSuites.tags = (function(el, options) {
             var ret = obj.options.onbeforechange(el, obj, obj.options.value, value);
             if (ret === false) {
                 return false;
-            } else { 
+            } else {
                 if (ret != null) {
                     value = ret;
                 }
@@ -26189,7 +26189,7 @@ jSuites.tags = (function(el, options) {
     /**
      * Add one element from the suggestions to the element
      * @param {object} item - Node element in the suggestions container
-     */ 
+     */
     obj.selectIndex = function(text, value) {
         var node = jSuites.getNode();
         if (node) {
@@ -26670,7 +26670,7 @@ jSuites.toolbar = (function(el, options) {
             toolbarItem.classList.add('jtoolbar-item');
 
             if (items[i].width) {
-                toolbarItem.style.width = parseInt(items[i].width) + 'px'; 
+                toolbarItem.style.width = parseInt(items[i].width) + 'px';
             }
 
             if (items[i].k) {
@@ -26960,7 +26960,7 @@ jSuites.validations = (function() {
         }
         return null;
     }
-    
+
     component.url = function() {
         var pattern = new RegExp(/(((https?:\/\/)|(www\.))[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|]+)/ig);
         return pattern.test(data) ? true : false;
@@ -26968,13 +26968,13 @@ jSuites.validations = (function() {
 
     component.email = function(data) {
         var pattern = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-        return data && pattern.test(data) ? true : false; 
+        return data && pattern.test(data) ? true : false;
     }
-    
+
     component.required = function(data) {
         return data.trim() ? true : false;
     }
-    
+
     component.number = function(data, options) {
        if (! isNumeric(data)) {
            return false;
