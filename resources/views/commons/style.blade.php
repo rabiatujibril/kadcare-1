@@ -4,4 +4,5 @@
 <link rel="stylesheet" href="{{ asset('assets/cssbundle/dataTables.min.css') }}">
 
 <link rel="stylesheet" href="{{ asset('commons/css/app.css') }}">
+
 @stack('style')

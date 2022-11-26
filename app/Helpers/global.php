@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DrugController;
+use App\Http\Controllers\Admin\FacilityController;
+use App\Http\Controllers\Admin\InventoryController;
+use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\RequestController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +17,17 @@ if(!function_exists('logo')){
 
 function formatDate($date){
     return date('jS M, Y', strtotime($date));
+}
+
+function age($date_of_birth = null){
+    if(!is_null($date_of_birth)){
+        $dob = new DateTime($date_of_birth);
+        $now = new DateTime();
+        $difference = $now->diff($dob);
+        $age = $difference->y;
+        return  $age;
+    }
+    return 0;
 }
 
 function isNotAuthed() : void {
@@ -36,6 +51,37 @@ function isAuthed($guard = 'auth:web') : void {
            Route::delete('/destroy/{request}', [RequestController::class, 'destroy'])->name('admin.request.destroy');
         });
 
-        
+        Route::prefix('patients')->group(function(){
+            Route::get('/', [PatientController::class, 'index'])->name('admin.patient.index');
+            Route::post('/', [PatientController::class, 'store'])->name('admin.patient.store');
+            Route::post('/create', [PatientController::class, 'create'])->name('admin.patient.create');
+            Route::get('/show/{patient}', [PatientController::class, 'show'])->name('admin.patient.show');
+            Route::delete('/destroy/{patient}', [PatientController::class, 'destroy'])->name('admin.patient.destroy');
+        });
+
+        Route::prefix('facilities')->group(function(){
+            Route::get('/', [FacilityController::class, 'index'])->name('admin.facility.index');
+            Route::post('/', [FacilityController::class, 'store'])->name('admin.facility.store');
+            Route::post('/create', [FacilityController::class, 'create'])->name('admin.facility.create');
+            Route::get('/show/{facility}', [FacilityController::class, 'show'])->name('admin.facility.show');
+            Route::delete('/destroy/{facility}', [FacilityController::class, 'destroy'])->name('admin.facility.destroy');
+        });
+
+        Route::prefix('drugs')->group(function(){
+            Route::get('/', [DrugController::class, 'index'])->name('admin.drug.index');
+            Route::post('/', [DrugController::class, 'store'])->name('admin.drug.store');
+            Route::post('/create', [DrugController::class, 'create'])->name('admin.drug.create');
+            Route::get('/show/{drug}', [DrugController::class, 'show'])->name('admin.drug.show');
+            Route::delete('/destroy/{drug}', [DrugController::class, 'destroy'])->name('admin.drug.destroy');
+        });
+
+        Route::prefix('inventory')->group(function(){
+            Route::get('/', [InventoryController::class, 'index'])->name('admin.inventory.index');
+            Route::post('/', [InventoryController::class, 'store'])->name('admin.inventory.store');
+            Route::post('/create', [InventoryController::class, 'create'])->name('admin.inventory.create');
+            Route::get('/show/{item}', [InventoryController::class, 'show'])->name('admin.inventory.show');
+            Route::delete('/destroy/{item}', [InventoryController::class, 'destroy'])->name('admin.inventory.destroy');
+        });
+
     });
 }

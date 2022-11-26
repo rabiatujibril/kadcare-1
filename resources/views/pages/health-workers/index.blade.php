@@ -4,7 +4,7 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header">
-                <h6 class="card-title m-0">FACILITY LIST</h6>
+                <h6 class="card-title m-0">HEALTH WORKER LIST</h6>
                 <div class="dropdown morphing scale-left">
                     <a href="#" class="card-fullscreen" data-bs-toggle="tooltip" title="Card Full-Screen"><i class="icon-size-fullscreen"></i></a>
                     <a href="#" class="more-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-h"></i></a>
@@ -23,25 +23,21 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Code</th>
+                        <th>Number</th>
                         <th>Name</th>
-                        <th>Ward</th>
                         <th>Phone</th>
-                        <th>Status</th>
+                        <th>Facility</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($facilities as $facility)
+                    @foreach($healthWorkers as $healthWorker)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $facility->code }}</td>
-                            <td>{{ $facility->name ?? null }}</td>
-                            <td>{{ $facility->ward->name ?? null }}</td>
-                            <td>{{ $facility->phone ?? null }}</td>
-                            <td>
-                                Active
-                            </td>
+                            <td>{{ $healthWorker->user->fullname ?? null }}</td>
+                            <td>{{ $healthWorker->drug->name ?? null }}</td>
+                            <td>{{ $healthWorker->available_quantity ?? null }}</td>
+                            <td>{{ $healthWorker->last_stock_quantity ?? null }}</td>
                             <td class="text-right">
                                 <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-eye"></i></a>
                                 <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-edit"></i></a>

@@ -15,9 +15,9 @@ use Illuminate\Database\Eloquent\Model;
 @property bigint $created_by created by
 @property timestamp $created_at created at
 @property timestamp $updated_at updated at
-   
+
  */
-class Patient extends Model 
+class Patient extends Model
 {
     const MARITAL_STATUS_SINGLE='Single';
 
@@ -59,5 +59,14 @@ const GENDER_FEMALE='Female';
 
 
 
+    public function scopeFacility($query, int $facility_id = null) {
+        if(!is_null($facility_id))
+            return $query->where('facility_id', $facility_id);
+        return $query->where('facility_id', session('facility')->id);
+    }
+
+    public function fullname(){
+        return $this->lastname. ' '. $this->firstname . ' ' . $this->othernames;
+    }
 
 }

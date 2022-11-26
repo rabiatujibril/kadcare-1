@@ -1,8 +1,11 @@
-.page-footer{
+/*.page-footer{
     position:fixed;
     bottom: 0;
     width:100%;
-    /*flex-shrink: 0;*/
+    !*flex-shrink: 0;*!
     background: var(--body-color);
-}
+}*/
 
+.text-right{
+    text-align:right;
+}

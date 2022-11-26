@@ -63,11 +63,8 @@
                     </a>
 
                     <ul class="sub-menu collapse" id="menu_doctor">
-                        <li><a class="ms-link" href="doctor-all.html">All Doctors</a></li>
-                        <li><a class="ms-link" href="doctor-add.html">Add new doctor</a></li>
-                        <li><a class="ms-link" href="doctor-profile.html">Doctors Profile</a></li>
-                        <li><a class="ms-link" href="doctor-schedule.html">Doctor Schedule</a></li>
-                        <li><a class="ms-link" href="doctor-appointment.html">Book Appointment</a></li>
+                        <li><a class="ms-link" href="doctor-add.html">Add Health Worker</a></li>
+                        <li><a class="ms-link" href="doctor-all.html">Health Worker List</a></li>
                     </ul>
                 </li>
                 <li class="collapsed">
@@ -82,10 +79,8 @@
                     </a>
 
                     <ul class="sub-menu collapse" id="menu_patient">
-                        <li><a class="ms-link" href="#">Patient List</a></li>
-                        <li><a class="ms-link" href="#">Add new patient</a></li>
-                        <li><a class="ms-link" href="#">Patient Profile</a></li>
-                        <li><a class="ms-link" href="#">Patient Invoices</a></li>
+                        <li><a class="ms-link" href= "{{ route('admin.patient.create') }}">Add patient</a></li>
+                        <li><a class="ms-link" href="{{ route('admin.patient.index') }}">Patient List</a></li>
                     </ul>
                 </li>
                 <li class="collapsed">
@@ -99,8 +94,8 @@
                     </a>
 
                     <ul class="sub-menu collapse" id="menu_dug">
-                        <li><a class="ms-link" href="#">All Drugs</a></li>
                         <li><a class="ms-link" href="#">Add Drug</a></li>
+                        <li><a class="ms-link" href="{{ route('admin.drug.index') }}">All Drugs</a></li>
                     </ul>
                 </li>
                 <li class="collapsed">
@@ -120,7 +115,7 @@
                     </a>
                     <ul class="sub-menu collapse" id="menu_facility">
                         <li><a class="ms-link" href="#">Add Facility</a></li>
-                        <li><a class="ms-link" href="#">Facility List</a></li>
+                        <li><a class="ms-link" href="{{ route('admin.facility.index') }}">Facility List</a></li>
                     </ul>
                 </li>
                 <li class="collapsed">
@@ -138,6 +133,26 @@
                     <ul class="sub-menu collapse" id="menu_request">
                         <li><a class="ms-link" href="{{ route('admin.request.create') }}">Add Request</a></li>
                         <li><a class="ms-link" href="{{ route('admin.request.index') }}">Request List</a></li>
+                    </ul>
+                </li>
+                <li class="collapsed">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu_inventory" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="currentColor" viewBox="0 0 18 18">
+                            <path d="M14.7175 2.35666H11.7491V0.392379C11.7491 0.175676 11.5735 0 11.3567 0H6.64325C6.42651 0 6.25087 0.175676 6.25087 0.392379V2.3567H3.28252C2.4555 2.3567 1.78271 3.02948 1.78271 3.8565V17.6077C1.78271 17.8244 1.95836 18 2.17509 18C2.79184 18 15.4249 18 15.8249 18C16.0416 18 16.2173 17.8244 16.2173 17.6077V3.85646C16.2173 3.02952 15.5444 2.35666 14.7175 2.35666ZM7.03563 0.784723H10.9643C10.9643 1.35482 10.9643 4.14404 10.9643 4.7134H7.03563C7.03563 4.14373 7.03563 1.35461 7.03563 0.784723ZM8.6076 17.2152H6.51507V15.1227H8.6076V17.2152ZM11.4849 17.2152H9.39236V15.1227H11.4849V17.2152ZM12.2696 17.2152V14.7303C12.2696 14.5136 12.094 14.3379 11.8772 14.3379C11.0307 14.3379 6.97755 14.3379 6.12269 14.3379C5.90595 14.3379 5.73031 14.5136 5.73031 14.7303V17.2152H2.56747V3.85646C2.56747 3.46215 2.88827 3.14142 3.28252 3.14142H6.25087V5.10578C6.25087 5.32248 6.42651 5.49816 6.64325 5.49816H11.3567C11.5735 5.49816 11.7491 5.32248 11.7491 5.10578V3.14142H14.7175C15.1117 3.14142 15.4325 3.46219 15.4325 3.85646V17.2152H12.2696Z" />
+                            <path class="fill-secondary" d="M6.05106 6.77929H4.20117C4.04824 6.77929 3.92432 6.90322 3.92432 7.05615V8.90603C3.92432 9.05896 4.04824 9.18289 4.20117 9.18289H6.05106C6.20399 9.18289 6.32791 9.05896 6.32791 8.90603V7.05615C6.32791 6.90322 6.20399 6.77929 6.05106 6.77929Z" />
+                            <path class="fill-secondary" d="M9.92503 6.77929H8.07511C7.92218 6.77929 7.79825 6.90322 7.79825 7.05615V8.90603C7.79825 9.05896 7.92218 9.18289 8.07511 9.18289H9.925C10.0779 9.18289 10.2019 9.05896 10.2019 8.90603V7.05615C10.2019 6.90322 10.0779 6.77929 9.92503 6.77929Z" />
+                            <path class="fill-secondary" d="M13.7989 6.77929H11.949C11.7961 6.77929 11.6722 6.90322 11.6722 7.05615V8.90603C11.6722 9.05896 11.7961 9.18289 11.949 9.18289H13.7989C13.9518 9.18289 14.0757 9.05896 14.0757 8.90603V7.05615C14.0757 6.90322 13.9518 6.77929 13.7989 6.77929Z" />
+                            <path class="fill-secondary" d="M6.05106 10.6532H4.20117C4.04824 10.6532 3.92432 10.7771 3.92432 10.93V12.7799C3.92432 12.9329 4.04824 13.0568 4.20117 13.0568H6.05106C6.20399 13.0568 6.32791 12.9329 6.32791 12.7799V10.93C6.32791 10.7772 6.20399 10.6532 6.05106 10.6532Z" />
+                            <path class="fill-secondary" d="M9.92503 10.6532H8.07511C7.92218 10.6532 7.79825 10.7771 7.79825 10.93V12.7799C7.79825 12.9329 7.92218 13.0568 8.07511 13.0568H9.925C10.0779 13.0568 10.2019 12.9329 10.2019 12.7799V10.93C10.2019 10.7772 10.0779 10.6532 9.92503 10.6532Z" />
+                            <path class="fill-secondary" d="M13.7989 10.6532H11.949C11.7961 10.6532 11.6722 10.7771 11.6722 10.93V12.7799C11.6722 12.9329 11.7961 13.0568 11.949 13.0568H13.7989C13.9518 13.0568 14.0757 12.9329 14.0757 12.7799V10.93C14.0757 10.7772 13.9518 10.6532 13.7989 10.6532Z" />
+                            <path class="fill-secondary" d="M9.75111 1.53855C9.53438 1.53855 9.35873 1.71422 9.35873 1.93093V2.35674H8.64134V1.93089C8.64134 1.71419 8.46569 1.53851 8.24896 1.53851C8.03222 1.53851 7.85658 1.71419 7.85658 1.93089V3.56717C7.85658 3.78387 8.03225 3.95955 8.24896 3.95955C8.46569 3.95955 8.64134 3.78387 8.64134 3.56717V3.14139H9.35873V3.5672C9.35873 3.78391 9.53434 3.95958 9.75111 3.95958C9.96789 3.95958 10.1435 3.78391 10.1435 3.5672V1.93089C10.1435 1.71422 9.96785 1.53855 9.75111 1.53855Z" />
+                        </svg>
+                        <span class="ms-2">Inventory</span>
+                        <span class="arrow fa fa-angle-right ms-auto text-end"></span>
+                    </a>
+                    <ul class="sub-menu collapse" id="menu_inventory">
+                        <li><a class="ms-link" href="#">Add Item</a></li>
+                        <li><a class="ms-link" href="{{ route('admin.inventory.index') }}">Item List</a></li>
                     </ul>
                 </li>
                 <li class="collapsed">
