@@ -94,22 +94,36 @@ const GENDER_FEMALE='Female';
     public function facility(){
         $facility = Facility::join('user_facilities', 'user_facilities.facility_id', '=', 'facilities.id')
             ->where('user_facilities.user_id', $this->id)->first();
-        return $facility;
+        if($facility)
+            return $facility;
+        return false;
     }
 
     public function lga(){
         $lga = Lga::join('user_lgas', 'user_lgas.lga_id', '=', 'lgas.id')
             ->where('user_lgas.user_id', $this->id)->first();
-        return $lga;
+        if($lga)
+            return $lga;
+        return false;
+    }
+
+    public function health_worker() {
+        $health_worker = UserHealthWorker::where('user_id', $this->id)->where('status', 1)->first();
+        if($health_worker)
+            return $health_worker;
+        return false;
     }
 
     public function loginTask(){
         $facility = $this->facility();
         $lga = $this->lga();
+        $health_worker = $this->health_worker();
         if($facility)
             session()->put('facility', $facility);
         if($lga)
             session()->put('lga', $lga);
+        if($health_worker)
+            session()->put('is_health_worker', $health_worker);
     }
 
 

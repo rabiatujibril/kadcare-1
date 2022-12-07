@@ -24,7 +24,7 @@ class AuthController extends Controller
             auth()->user()->loginTask();
             return redirect()->route('dashboard');
         }
-        return $request;
+        return back()->withErrors($request);
     }
 
     public function register(){
