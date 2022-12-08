@@ -123,7 +123,7 @@ const GENDER_FEMALE='Female';
         if($lga)
             session()->put('lga', $lga);
         if($health_worker)
-            session()->put('is_health_worker', $health_worker);
+            session()->put('health_worker', $health_worker);
     }
 
 

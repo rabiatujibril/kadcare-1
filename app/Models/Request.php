@@ -55,4 +55,11 @@ const STATUS_APPROVED='Approved';
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function getAmount(){
+        $amount = 0;
+        foreach($this->items as $item){
+            $amount += ($item->approved_quantity * $item->unit_price);
+        }
+        return $amount;
+    }
 }

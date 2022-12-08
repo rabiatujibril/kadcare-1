@@ -49,6 +49,10 @@ function isAuthed($guard = 'auth:web') : void {
            Route::post('/store', [RequestController::class, 'store'])->name('admin.request.store');
            Route::get('/show/{request}', [RequestController::class, 'show'])->name('admin.request.show');
            Route::delete('/destroy/{request}', [RequestController::class, 'destroy'])->name('admin.request.destroy');
+           Route::post('/approve', [RequestController::class, 'approve'])->name('admin.request.approve');
+           Route::post('/cost', [RequestController::class, 'cost'])->name('admin.request.cost');
+           Route::post('/delivered', [RequestController::class, 'deliver'])->name('admin.request.deliver');
+           Route::post('/cancel', [RequestController::class, 'cancel'])->name('admin.request.cancel');
         });
 
         Route::prefix('patients')->group(function(){
