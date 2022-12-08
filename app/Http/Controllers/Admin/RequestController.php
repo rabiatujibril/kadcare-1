@@ -49,7 +49,7 @@ class RequestController extends Controller
                 $facility = Facility::find($req->facility_id);
                 if($facility)
                     if(!is_null($facility->phone))
-                        return SMS::sendSMS($facility->phone, SMS::SMS_MESSAGE['request_approved'], );
+                        SMS::sendSMS($facility->phone, SMS::SMS_MESSAGE['request_approved'], );
             }
         }
 //        return SMS::getBalance();
@@ -77,7 +77,7 @@ class RequestController extends Controller
                 $facility = Facility::find($req->facility_id);
                 if($facility)
                     if(!is_null($facility->phone))
-                        return SMS::sendSMS($facility->phone, SMS::SMS_MESSAGE['request_costed'], );
+                        SMS::sendSMS($facility->phone, SMS::SMS_MESSAGE['request_costed'], );
             }
         }
         return back()->with('success', 'Costed successfully');
@@ -100,7 +100,7 @@ class RequestController extends Controller
                 $facility = Facility::find($req->facility_id);
                 if($facility)
                     if(!is_null($facility->phone))
-                        return SMS::sendSMS($facility->phone, SMS::SMS_MESSAGE['request_delivered'], );
+                        SMS::sendSMS($facility->phone, SMS::SMS_MESSAGE['request_delivered'], );
             }
         }
         return back()->with('success', 'Delivered successfully');
@@ -114,7 +114,7 @@ class RequestController extends Controller
                 $facility = Facility::find($req->facility_id);
                 if($facility)
                     if(!is_null($facility->phone))
-                        return SMS::sendSMS($facility->phone, SMS::SMS_MESSAGE['request_delivered'], );
+                        SMS::sendSMS($facility->phone, SMS::SMS_MESSAGE['request_delivered'], );
             }
         }
         return back()->with('success', 'Delivered successfully');
