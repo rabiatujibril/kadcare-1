@@ -92,7 +92,7 @@ const GENDER_FEMALE='Female';
     }
 
     public function facility(){
-        $facility = Facility::join('user_facilities', 'user_facilities.facility_id', '=', 'facilities.id')
+        $facility = Facility::select('facilities.*')->join('user_facilities', 'user_facilities.facility_id', '=', 'facilities.id')
             ->where('user_facilities.user_id', $this->id)->first();
         if($facility)
             return $facility;
@@ -100,7 +100,7 @@ const GENDER_FEMALE='Female';
     }
 
     public function lga(){
-        $lga = Lga::join('user_lgas', 'user_lgas.lga_id', '=', 'lgas.id')
+        $lga = Lga::select('lgas.*')->join('user_lgas', 'user_lgas.lga_id', '=', 'lgas.id')
             ->where('user_lgas.user_id', $this->id)->first();
         if($lga)
             return $lga;

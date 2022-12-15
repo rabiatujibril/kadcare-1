@@ -78,8 +78,7 @@
                                     </div>
                                 </form>
                                 <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#approve-request" class="btn btn-success"><i class="fa fa-check-circle me-2"></i> Approve</a>
-                                <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#cost-request"  class="btn btn-info"><i class="fa fa-check-circle me-2"></i> Cost</a>
-                                <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#deliver-request"  class="btn btn-warning"><i class="fa fa-check-circle me-2"></i> Delivered</a>
+                                <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#deliver-request"  class="btn btn-warning"><i class="fa fa-check-circle me-2"></i> Receive</a>
                                 <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#"  class="btn btn-danger"><i class="fa fa-times me-2"></i> Cancel</a>
                             </div>
                         </div>
@@ -212,9 +211,9 @@
 
                 <div class="modal-body custom_scroll p-lg-5">
                     <button type="button" class="btn-close position-absolute top-0 end-0 mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <h4 class="modal-title">Delivered Request</h4>
+                    <h4 class="modal-title">Received Request</h4>
                     <div class="row g-2 mt-3">
-                        <form class="deliver-request-form" action="{{ route('admin.request.deliver') }}" method="POST">
+                        <form class="deliver-request-form" action="{{ route('admin.request.receive') }}" method="POST">
                             @csrf
                             <table class="table table-hover mb-4">
                                 <thead>
@@ -223,7 +222,7 @@
                                     <th>Code</th>
                                     <th>Name</th>
                                     <th>Approved</th>
-                                    <th>Delivered</th>
+                                    <th>Received</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -259,7 +258,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary deliver-request-btn"><i class="fa fa-check-circle me-2"></i>Delivered</button>
+                    <button type="button" class="btn btn-primary deliver-request-btn"><i class="fa fa-check-circle me-2"></i>Received</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>

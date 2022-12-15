@@ -83,7 +83,7 @@ class RequestController extends Controller
         return back()->with('success', 'Costed successfully');
     }
 
-    public function deliver(Request $request){
+    public function receive(Request $request){
         $item_id = $request->item_id;
         $delivered_quantity = $request->delivered_quantity;
         for($i = 0; $i<count($request->item_id); $i++){

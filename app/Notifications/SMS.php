@@ -12,10 +12,10 @@ class SMS
     const ACCOUNT = "3586_kadcare";
     const PASS = "kadcare@123";
     const SMS_MESSAGE = [
-        'request_approved' => "Dear [FACILITY], your request has been approved.",
-        'request_costed' => "Dear [FACILITY], your request has been costed.",
-        'request_delivered' => "Dear [FACILITY], your request has been delivered.",
-        'request_cancelled' => "Dear [FACILITY], your request has been cancelled.",
+        'request_approved' => "Dear [FACILITY], your request [REQUEST] has been approved.",
+        'request_costed' => "Dear [FACILITY], your request [REQUEST] has been costed.",
+        'request_delivered' => "Dear [FACILITY], your request [REQUEST] has been delivered.",
+        'request_cancelled' => "Dear [FACILITY], your request [REQUEST] has been cancelled.",
     ];
 
     public static function requests($body = [], $url = self::URL, $headers = []){

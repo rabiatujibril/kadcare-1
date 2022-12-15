@@ -41,7 +41,7 @@
                             <td class="text-right">
                                 <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-eye"></i></a>
                                 <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-edit"></i></a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-trash"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary delete" model-name="{{ class_basename($drug) }}" model-id="{{ $drug->id }}"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

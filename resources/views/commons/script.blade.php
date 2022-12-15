@@ -1,3 +1,4 @@
+<script src="{{ asset('commons/js/jquery-3.5.1.js') }}"></script>
 <script src="{{ asset('assets/js/theme.js') }}"></script>
 <script src="{{ asset('assets/js/bundle/apexcharts.bundle.js') }}"></script>
 <script src="{{ asset('assets/js/bundle/dataTables.bundle.js') }}"></script>
@@ -5,6 +6,8 @@
 <script src="{{ asset('commons/js/app.js') }}"></script>
 <script src="{{ asset('assets/js/bundle/dataTables.bundle.js') }}"></script>
 <script src="{{ asset('assets/js/bundle/invoice.bundle.js') }}"></script>
+<script src="{{ asset('assets/bundles/select2.bundle.js') }}"></script>
+
 @stack('script')
 <script>
     $('.datatable').addClass('nowrap').dataTable({

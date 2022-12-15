@@ -27,60 +27,40 @@
                             </tr>
                             </tbody>
                         </table>
-                        <table class="items">
-                            <tbody>
-                            <tr>
-                                <th>Drug/Facility</th>
-                                <th>Description</th>
-                                <th style="width: 140px;">Available</th>
-                                <th style="width: 70px;">QTY</th>
-                            </tr>
-                            <tr class="item-row">
-                                <td class="item-name">
-                                    <div class="delete-wpr"><textarea>Drug Code</textarea>
-                                        <a class="delete" href="javascript:;" title="Remove row">X</a>
-                                    </div>
-                                </td>
-                                <td class="description">
-                                    <textarea>Description</textarea>
-                                </td>
-                                <td><textarea class="cost">0</textarea></td>
-                                <td><textarea class="qty">0</textarea></td>
-                            </tr>
-                            <tr id="hiderow">
-                                <td colspan="5"><a id="addrow" href="javascript:;" title="Add a row">Add a row</a></td>
-                            </tr>
-                            {{--<tr>
-                                <td colspan="2" class="blank"> </td>
-                                <td colspan="2" class="total-line">Subtotal</td>
-                                <td class="total-value">
-                                    <div id="subtotal">$875.00</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="blank"> </td>
-                                <td colspan="2" class="total-line">Total</td>
-                                <td class="total-value">
-                                    <div id="total">$875.00</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="blank"> </td>
-                                <td colspan="2" class="total-line">Amount Paid</td>
-                                <td class="total-value"><textarea id="paid">$0.00</textarea></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="blank"> </td>
-                                <td colspan="2" class="total-line balance">Balance Due</td>
-                                <td class="total-value balance">
-                                    <div class="due">$875.00</div>
-                                </td>
-                            </tr>--}}
-                            </tbody>
-                        </table>
                     </div>
-                    <div class="my-4">
-                        <button type="button" class="btn btn-primary"><i class="fa fa-print me-2"></i>Create request</button>
+
+                    <form class="g-3 my-3">
+                        <div class="row mb-1">
+                            <div class="col-6">
+                                <label for="TextInput" class="form-label">Select Code</label>
+                                <select class="form-control">
+                                    <option>--select--</option>
+                                </select>
+                            </div>
+                            <div class="col-5">
+                                <label for="TextInput" class="form-label">Quantity</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-1">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col-6">
+                                <select class="form-control">
+                                    <option>--select--</option>
+                                </select>
+                            </div>
+                            <div class="col-5">
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-1">
+                                <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="my-4 text-right">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-send me-2"></i>Create request</button>
                     </div>
                 </div>
             </div>

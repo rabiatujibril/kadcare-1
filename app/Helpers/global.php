@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\InventoryController;
 use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\RequestController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\MiscController;
 use Illuminate\Support\Facades\Route;
 
 if(!function_exists('logo')){
@@ -51,7 +52,7 @@ function isAuthed($guard = 'auth:web') : void {
            Route::delete('/destroy/{request}', [RequestController::class, 'destroy'])->name('admin.request.destroy');
            Route::post('/approve', [RequestController::class, 'approve'])->name('admin.request.approve');
            Route::post('/cost', [RequestController::class, 'cost'])->name('admin.request.cost');
-           Route::post('/delivered', [RequestController::class, 'deliver'])->name('admin.request.deliver');
+           Route::post('/receive', [RequestController::class, 'receive'])->name('admin.request.receive');
            Route::post('/cancel', [RequestController::class, 'cancel'])->name('admin.request.cancel');
         });
 
@@ -87,5 +88,9 @@ function isAuthed($guard = 'auth:web') : void {
             Route::delete('/destroy/{item}', [InventoryController::class, 'destroy'])->name('admin.inventory.destroy');
         });
 
+
+        Route::prefix('misc')->group(function(){
+            Route::post('destroy', [MiscController::class,'destroy'])->name('admin.misc.destroy');
+        });
     });
 }

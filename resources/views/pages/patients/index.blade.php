@@ -32,18 +32,18 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($patients as $patients)
+                    @foreach($patients as $patient)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $patients->number }}</td>
-                            <td>{{ $patients->fullname() ?? null }}</td>
-                            <td>{{ $patients->gender ?? null }}</td>
-                            <td>{{ age($patients->dob) ?? null }}</td>
-                            <td>{{ $patients->phone ?? null }}</td>
+                            <td>{{ $patient->number }}</td>
+                            <td>{{ $patient->fullname() ?? null }}</td>
+                            <td>{{ $patient->gender ?? null }}</td>
+                            <td>{{ age($patient->dob) ?? null }}</td>
+                            <td>{{ $patient->phone ?? null }}</td>
                             <td class="text-right">
-                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-eye"></i></a>
+                                <a href="{{ route('admin.patient.show', $patient->id) }}" class="btn btn-sm btn-outline-secondary"><i class="fa fa-eye"></i></a>
                                 <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-edit"></i></a>
-                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa fa-trash"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary delete" model-name="{{ class_basename($patient) }}" model-id="{{ $patient->id }}"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

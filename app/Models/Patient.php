@@ -66,7 +66,24 @@ const GENDER_FEMALE='Female';
     }
 
     public function fullname(){
-        return $this->lastname. ' '. $this->firstname . ' ' . $this->othernames;
+        return ucwords($this->lastname. ' '. $this->firstname . ' ' . $this->othernames);
     }
+
+    public function prescriptions(){
+        return $this->hasMany(Prescription::class)->with('items');
+    }
+
+    public function encounters(){
+        return $this->hasMany(Encounter::class)->with('prescriptions', 'createdBy');
+    }
+
+    public function createdBy(){
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function facility(){
+        return $this->belongsTo(Facility::class)->with('ward');
+    }
+
 
 }

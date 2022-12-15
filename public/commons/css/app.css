@@ -17,3 +17,9 @@
     /*height: 1.2em;*/
     white-space: nowrap;
 }
+
+
+@media print {
+    body * { display:none; }
+    #printarea * { display:block; }
+}

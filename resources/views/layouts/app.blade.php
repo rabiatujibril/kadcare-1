@@ -29,7 +29,7 @@
     @include('commons.footer')
 </div>
 
-<div class="modal fade" id="CreateNew" tabindex="-1">
+<div class="modal fade" id="myModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-vertical modal-dialog-scrollable">
         <div class="modal-content rounded-0">
             <div class="modal-header">
@@ -1261,6 +1261,49 @@
 </div>
 
 
+<div class="modal fade" id="deleteConfirm" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Are you sure?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body custom_scroll">
+                Record once deleted can not be recovered. Are you sure?
+                <form class="deleteForm" method="POST" action="{{ route('admin.misc.destroy') }}">
+                    <input type="hidden" name="_token" class="_token" />
+                    <input type="hidden" name="model_name" class="model_name" />
+                    <input type="hidden" name="model_id" class="model_id" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger deleteBtn"><i class="fa fa-check me-2"></i>Yes, Delete!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @include('commons.script')
+<script>
+    $(document).ready(function(){
+
+
+
+        let body = $('body');
+        body.on('click', '.delete', function(){
+            let model_name = $(this).attr('model-name')
+            let model_id = $(this).attr('model-id')
+            let _token = '{{ csrf_token() }}'
+            $('.model_name').val(model_name)
+            $('.model_id').val(model_id)
+            $('._token').val(_token)
+            $('#deleteConfirm').modal('show')
+        })
+        body.on('click', '.deleteBtn', function(){
+            $('.deleteForm').submit();
+        })
+    })
+</script>
 </body>
 </html>

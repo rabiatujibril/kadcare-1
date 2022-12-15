@@ -50,7 +50,7 @@
                                 <td class="project-actions">
                                     <a href="{{ route('admin.request.show', $request->id) }}" class="btn btn-sm btn-outline-secondary"><i class="fa fa-eye"></i></a>
                                     <a href="javascript:void(0);" class="btn btn-sm btn-outline-secondary"><i class="fa fa-edit"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-sm btn-outline-secondary"><i class="fa fa-trash"></i></a>
+                                    <a href="javascript:void(0);" class="btn btn-sm btn-outline-secondary delete" model-name="{{ class_basename($request) }}" model-id="{{ $request->id }}"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach
