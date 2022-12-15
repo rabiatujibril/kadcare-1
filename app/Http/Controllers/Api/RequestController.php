@@ -11,7 +11,7 @@ class RequestController extends BaseController
     //
     public function index(Request $request){
         $user = $request->user();
-        $requests = \App\Models\Request::with('items', 'documents')->orderBy('number', 'desc');
+        $requests = \App\Models\Request::with('facility','items', 'documents')->orderBy('number', 'desc');
 
         $requests = $requests->get();
         if($requests)

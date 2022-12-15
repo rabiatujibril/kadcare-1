@@ -7,7 +7,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search...">
                     <button class="btn btn-secondary" type="button">Search</button>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_modal" type="button">Add new drug</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_modal" type="button">Add new</button>
                     <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#import_modal" type="button"><i class="fa fa-file-excel-o"></i> Import</button>
                 </div>
             </div>
@@ -135,7 +135,7 @@
         </div>
     </div>
     <div class="modal fade" id="import_modal" tabindex="-1" aria-labelledby="add_drug" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Import</h5>
@@ -144,7 +144,8 @@
                 <div class="modal-body">
                     <div class="row g-3">
                         <div class="col-lg-12">
-                            <label for="formFile" class="form-label">Select Avatar</label>
+                            <div class="float-right"><a href="#">Template</a></div>
+                            <label for="formFile" class="form-label">Select excel file</label>
                             <input class="form-control" type="file" id="formFile">
                         </div>
                     </div>

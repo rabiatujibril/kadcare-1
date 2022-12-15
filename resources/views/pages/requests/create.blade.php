@@ -57,9 +57,14 @@
                                 <button class="btn btn-danger btn-sm"><i class="fa fa-times"></i></button>
                             </div>
                         </div>
+                        <div class="row mb-1">
+                            <div class="col-1">
+                                <button class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
                     </form>
 
-                    <div class="my-4 text-right">
+                    <div class="my-4 mt-5 ">
                         <button type="button" class="btn btn-primary"><i class="fa fa-send me-2"></i>Create request</button>
                     </div>
                 </div>

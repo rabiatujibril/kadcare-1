@@ -3,6 +3,15 @@
 @section('content')
     <div class="col-xl-12">
         <div class="card">
+            <div class="card-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <button class="btn btn-secondary" type="button">Search</button>
+                    <a href="{{ route('admin.request.create') }}" class="btn btn-primary" >Create</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
             <div class="card-header">
                 <h6 class="card-title m-0">REQUEST LIST</h6>
                 <div class="dropdown morphing scale-left">

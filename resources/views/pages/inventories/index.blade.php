@@ -3,6 +3,16 @@
 @section('content')
     <div class="col-xl-12">
         <div class="card">
+            <div class="card-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <button class="btn btn-secondary" type="button">Search</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_modal" type="button">Add new</button>
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#import_modal" type="button"><i class="fa fa-file-excel-o"></i> Import</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
             <div class="card-header">
                 <h6 class="card-title m-0">INVENTORY LIST</h6>
                 <div class="dropdown morphing scale-left">
@@ -49,6 +59,101 @@
                     @endforeach
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="add_modal" tabindex="-1" aria-labelledby="add_drug" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add new drug</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="fw-bold">Basic Information</h6>
+                    <div class="row g-3">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="First Name">
+                                <label>Enter First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Last Name">
+                                <label>Enter Last Name</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" placeholder="Date of Birth">
+                                <label>Date of Birth </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Bank details">
+                                <label>Bank details</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-floating">
+                                <select class="form-select form-control">
+                                    <option value="1">VIP</option>
+                                    <option value="2">Vendors</option>
+                                    <option value="2">Regular</option>
+                                </select>
+                                <label for="floatingSelect">Customer type</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-floating">
+                                <select class="form-select form-control">
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                                <label for="floatingSelect">Gender</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <label for="formFile" class="form-label">Select Avatar</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-floating">
+                                <textarea type="text" class="form-control" placeholder="Address" style="height: 100px" data-gramm="false" wt-ignore-input="true"></textarea>
+                                <label>Address</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="import_modal" tabindex="-1" aria-labelledby="add_drug" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Import</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-lg-12">
+                            <div class="float-right"><a href="#">Template</a></div>
+                            <label for="formFile" class="form-label">Select excel file</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Import</button>
+                </div>
             </div>
         </div>
     </div>

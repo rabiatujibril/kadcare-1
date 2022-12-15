@@ -10,6 +10,10 @@
     text-align:right;
 }
 
+.float-right{
+    float:right;
+}
+
 .cut-text {
     text-overflow: ellipsis;
     overflow: hidden;
