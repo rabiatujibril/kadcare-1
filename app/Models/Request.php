@@ -47,6 +47,10 @@ const STATUS_APPROVED='Approved';
         return $this->hasMany(RequestItem::class, 'request_id');
     }
 
+    public function documents(){
+        return $this->hasMany(RequestDocument::class);
+    }
+
     public function facility(){
         return $this->belongsTo(Facility::class, 'facility_id')->with('ward');
     }
