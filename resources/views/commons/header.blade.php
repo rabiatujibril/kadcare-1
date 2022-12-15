@@ -16,9 +16,9 @@
                     <span class="line"></span>
                     </span>
                 </button>
-                <a href="#" class="brand-icon d-flex align-items-center mx-2 mx-sm-3 text-primary">
+                {{--<a href="#" class="brand-icon d-flex align-items-center mx-2 mx-sm-3 text-primary">
                     <img src="{{ asset('commons/images/logo.png') }}" width="32">
-                </a>
+                </a>--}}
             </div>
 
             <div class="header-left flex-grow-1 d-none d-md-block">

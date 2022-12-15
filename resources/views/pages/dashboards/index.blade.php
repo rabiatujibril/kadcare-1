@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row row-cols-xxl-5 row-cols-xxl-4 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 g-3 mb-3 row-deck">
+    <div class="row row-cols-xxl-4 row-cols-xxl-4 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 g-3 mb-3 row-deck">
         <div class="col">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
-                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-address-book fa-lg"></i></div>
+                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-calendar fa-lg"></i></div>
                     <div class="flex-fill ms-3 text-truncate">
                         <div class="small text-uppercase">Pending</div>
                         <div><span class="h6 mb-0 fw-bold">17</span> <small class="text-success">requests</small></div>
@@ -16,7 +16,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
-                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-product-hunt fa-lg"></i></div>
+                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-check fa-lg"></i></div>
                     <div class="flex-fill ms-3 text-truncate">
                         <div class="small text-uppercase">Approved</div>
                         <div><span class="h6 mb-0 fw-bold">42</span> <small class="text-success">requests</small></div>
@@ -27,9 +27,9 @@
         <div class="col">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
-                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-briefcase fa-lg"></i></div>
+                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-dollar fa-lg"></i></div>
                     <div class="flex-fill ms-3 text-truncate">
-                        <div class="small text-uppercase">Costed</div>
+                        <div class="small text-uppercase">Paid</div>
                         <div><span class="h6 mb-0 fw-bold">39</span> <small class="text-success">requests</small></div>
                     </div>
                 </div>
@@ -38,19 +38,21 @@
         <div class="col">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
-                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-dollar fa-lg"></i>
+                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-truck fa-lg"></i>
                     </div>
                     <div class="flex-fill ms-3 text-truncate">
-                        <div class="small text-uppercase">Delivered</div>
+                        <div class="small text-uppercase">Received</div>
                         <div><span class="h6 mb-0 fw-bold">30</span> <small class="text-success">requests</small></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row row-cols-xxl-3 row-cols-xxl-3 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 g-3 mb-3 row-deck">
         <div class="col">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
-                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-ambulance fa-lg"></i></div>
+                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-medkit fa-lg"></i></div>
                     <div class="flex-fill ms-3 text-truncate">
                         <div class="small text-uppercase">Drug Bank</div>
                         <div><span class="h6 mb-0 fw-bold">135</span> </div>
@@ -58,6 +60,30 @@
                 </div>
             </div>
         </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-dollar fa-lg"></i></div>
+                    <div class="flex-fill ms-3 text-truncate">
+                        <div class="small text-uppercase">Drug Value</div>
+                        <div><span class="h6 mb-0 fw-bold">2,120,425.00</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body d-flex align-items-center">
+                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-medkit fa-lg"></i></div>
+                    <div class="flex-fill ms-3 text-truncate">
+                        <div class="small text-uppercase">Drug Expired</div>
+                        <div><span class="h6 mb-0 fw-bold">135</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-xxl-5 row-cols-xxl-4 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 g-3 mb-3 row-deck">
         <div class="col">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
@@ -105,7 +131,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
-                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-money fa-lg"></i></div>
+                    <div class="avatar rounded-circle no-thumbnail bg-light"><i class="fa fa-building fa-lg"></i></div>
                     <div class="flex-fill ms-3 text-truncate">
                         <div class="small text-uppercase">Facilities</div>
                         <div><span class="h6 mb-0 fw-bold">580</span> </div>
@@ -116,6 +142,80 @@
     </div>
 
     <div class="row g-3 row-deck">
+        <div class="col-xxl-7 col-xl-12 col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title m-0">Drugs expired</h6>
+                    <div class="dropdown morphing scale-left">
+                        <a href="#" class="card-fullscreen" data-bs-toggle="tooltip" aria-label="Card Full-Screen"><i class="icon-size-fullscreen"></i></a>
+                        <a href="#" class="more-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-h"></i></a>
+                        <ul class="dropdown-menu shadow border-0 p-2" style="">
+                            <li><a class="dropdown-item" href="#">File Info</a></li>
+                            <li><a class="dropdown-item" href="#">Copy to</a></li>
+                            <li><a class="dropdown-item" href="#">Move to</a></li>
+                            <li><a class="dropdown-item" href="#">Rename</a></li>
+                            <li><a class="dropdown-item" href="#">Block</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm  align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Code</th>
+                                    <th>Facility</th>
+                                    <th>Expired On</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right mt-3"><a href="#">View all</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-5 col-xl-12 col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="card-title m-0">Drugs expiring in the next 6 months</h6>
+                    <div class="dropdown morphing scale-left">
+                        <a href="#" class="card-fullscreen" data-bs-toggle="tooltip" aria-label="Card Full-Screen"><i class="icon-size-fullscreen"></i></a>
+                        <a href="#" class="more-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-h"></i></a>
+                        <ul class="dropdown-menu shadow border-0 p-2" style="">
+                            <li><a class="dropdown-item" href="#">File Info</a></li>
+                            <li><a class="dropdown-item" href="#">Copy to</a></li>
+                            <li><a class="dropdown-item" href="#">Move to</a></li>
+                            <li><a class="dropdown-item" href="#">Rename</a></li>
+                            <li><a class="dropdown-item" href="#">Block</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm align-middle mb-0">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Code</th>
+                                <th>Facility</th>
+                                <th>Expiring On</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-right mt-3"><a href="#">View all</a></div>
+                </div>
+            </div>
+        </div>
         <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-12">
             <div class="card">
                 <div class="card-header">

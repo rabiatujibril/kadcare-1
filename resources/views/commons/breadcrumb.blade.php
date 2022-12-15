@@ -13,14 +13,12 @@
                 <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, {{ $user->firstname }}!</h1>
 {{--                <small class="text-muted">You have 12 new messages and 7 new notifications.</small>--}}
             </div>
-            {{--<div class="col-xxl-4 col-xl-5 col-lg-6 col-md-7 col-sm-12 mt-2 mt-md-0">
+            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-12 mt-2 mt-md-0">
 
                 <div class="input-group">
-                    <input class="form-control" type="text" name="daterange">
-                    <button class="btn btn-secondary" type="button" data-bs-toggle="tooltip" title="Send Report"><i class="fa fa-envelope"></i></button>
-                    <button class="btn btn-secondary" type="button" data-bs-toggle="tooltip" title="Download Reports"><i class="fa fa-download"></i></button>
-                    <button class="btn btn-secondary" type="button" data-bs-toggle="tooltip" title="Generate PDF"><i class="fa fa-file-pdf-o"></i></button>
-                    <button class="btn btn-secondary" type="button" data-bs-toggle="tooltip" title="Share Dashboard"><i class="fa fa-share-alt"></i></button>
+                    <select class="form-control" type="text" name="">
+                        <option>{{ date('Y') }}</option>
+                    </select>
                 </div>
 
                 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../assets/js/bundle/daterangepicker.bundle.js"></script>
@@ -35,7 +33,7 @@
                         });
                     })
                 </script>
-            </div>--}}
+            </div>
         </div>
     </div>
 </div>
